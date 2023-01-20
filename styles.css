@@ -158,3 +158,25 @@ footer .redes-sociais a:hover img {
   margin-right: 5px;
 }
 
+.lista-de-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px auto 30px;
+}
+
+.lista-de-produtos .produto {
+  margin-bottom: 70px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.lista-de-produtos .produto img {
+  border-radius: 11px 11px 0 0;
+}
+
+.lista-de-produtos .produto .conteudo {
+  padding: 10px;
+}
