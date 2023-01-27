@@ -180,3 +180,19 @@ footer .redes-sociais a:hover img {
 .lista-de-produtos .produto .conteudo {
   padding: 10px;
 }
+
+.escondido {
+  display: none;
+}
+
+#modal {
+  position: fixed;
+  top: 12%;
+  left: 10%;
+
+  width: 80%;
+  height: 75%;
+
+  background-color: blue;
+  border-radius: 20px;
+}
