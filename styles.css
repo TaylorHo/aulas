@@ -196,3 +196,21 @@ footer .redes-sociais a:hover img {
   background-color: blue;
   border-radius: 20px;
 }
+
+#fundo-preto {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#modal .produto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
