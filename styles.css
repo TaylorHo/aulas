@@ -171,10 +171,12 @@ footer .redes-sociais a:hover img {
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  width: 32%;
 }
 
 .lista-de-produtos .produto img {
   border-radius: 11px 11px 0 0;
+  width: 100%;
 }
 
 .lista-de-produtos .produto .conteudo {
@@ -249,7 +251,7 @@ footer .redes-sociais a:hover img {
 #modal .produto .conteudo p {
   color: var(--secondary-text-color);
   font-size: 14px;
-  margin-bottom: 140px;
+  margin-bottom: 10%;
   max-width: 400px;
 }
 
