@@ -77,7 +77,7 @@ function mostraModal(id) {
 
   var modal = document.querySelector("#modal");
 
-  modal.innerHTML = '<div class="produto"><div class="imagem"><img src="' + produto.imagem + '" alt="' + produto.titulo + '"></div><div class="conteudo"><h3>' + produto.titulo + '</h3><h2>R$' + produto.preco.split(",")[0] + '<span>,' + produto.preco.split(",")[1] + '</span></h2><p class="descricao">Descricão:</p><p>' + produto.descricao + '</p><a href="#">Comprar Agora</a></div></div>';
+  modal.innerHTML = '<div class="produto"><div class="imagem"><img src="' + produto.imagem + '" alt="' + produto.titulo + '"></div><div class="conteudo"><h3>' + produto.titulo + '</h3><h2>R$' + produto.preco.split(",")[0] + '<span>,' + produto.preco.split(",")[1] + '</span></h2><p class="descricao">Descricão:</p><p>' + produto.descricao + '</p><a href="#">Adicionar ao Carrinho</a></div></div>';
 
   modal.classList.remove("escondido");
 
