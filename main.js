@@ -109,6 +109,19 @@ function listaProdutos() {
 }
 
 
+function quantidadeNoCarrinho() {
+  var carrinho = localStorage.getItem('carrinho');
+
+  if (carrinho) {
+    var produtosNoCarrinho = JSON.parse(carrinho);
+
+    var elementoHTML = document.querySelector('.quantidade-no-carrinho');
+
+    elementoHTML.innerText = produtosNoCarrinho.length;
+  }
+}
+
+
 
 
 
@@ -171,8 +184,33 @@ function adicionarAoCarrinho(id) {
     localStorage.setItem('carrinho', JSON.stringify([produto]));
   }
 
+  quantidadeNoCarrinho();
 }
 
+
+function finalizarCompra() {
+  var carrinho = localStorage.getItem('carrinho');
+
+  var inicio = "Olá, gostaria de realizar um pedido:\n\n"
+  var pedido = "";
+  var total = 0;
+  var final = "\n\nTotal: R$";
+
+  if (carrinho) {
+    var produtosNoCarrinho = JSON.parse(carrinho);
+
+    produtosNoCarrinho.forEach((produtoDoCarrinho) => {
+      var produto = listaDeProdutos[produtoDoCarrinho.id - 1];
+      var preco = parseFloat(produto.preco.replace(',', '.'))
+      total += parseFloat(produtoDoCarrinho.quantidade * preco);
+      pedido += `📌 ${produtoDoCarrinho.quantidade}x *${produto.titulo}*\n     ↪️ _${produtoDoCarrinho.quantidade}x R\$${preco} ---> R\$${produtoDoCarrinho.quantidade * preco}_\n`;
+    });
+
+    var mensagem = `${inicio}${pedido}${final}${total}`;
+    var telefone = "5551989582215"
+    window.location.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagem)}&phone=${telefone}`;
+  }
+}
 
 
 // ##################################################
@@ -180,5 +218,6 @@ function adicionarAoCarrinho(id) {
 (() => {
   window.onload = () => {
     listaProdutos();
+    quantidadeNoCarrinho();
   }
 })()

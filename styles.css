@@ -263,3 +263,15 @@ footer .redes-sociais a:hover img {
   color: white;
   font-weight: 600;
 }
+
+.quantidade-no-carrinho {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 0 5px;
+  font-size: 12px;
+
+  position: relative;
+  top: -10px;
+  left: -11px;
+}
