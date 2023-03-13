@@ -171,10 +171,12 @@ footer .redes-sociais a:hover img {
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  width: 32%;
 }
 
 .lista-de-produtos .produto img {
   border-radius: 11px 11px 0 0;
+  width: 100%;
 }
 
 .lista-de-produtos .produto .conteudo {
@@ -188,12 +190,9 @@ footer .redes-sociais a:hover img {
 #modal {
   position: fixed;
   top: 12%;
-  left: 10%;
+  left: 18%;
 
-  width: 80%;
-  height: 75%;
-
-  background-color: blue;
+  background-color: white;
   border-radius: 20px;
 }
 
@@ -205,5 +204,62 @@ footer .redes-sociais a:hover img {
   width: 100vw;
   height: 100vh;
 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#modal .produto {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+  height: 100%;
+}
+
+#modal .produto .imagem {
+  margin-right: 30px;
+  height: 100%;
+}
+
+#modal .produto .imagem img {
+  border-radius: 14px;
+}
+
+#modal .produto .conteudo {
+  height: 100%;
+}
+
+#modal .produto .conteudo h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#modal .produto .conteudo h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+#modal .produto .conteudo h2 span {
+  font-size: 20px;
+}
+
+#modal .produto .conteudo .descricao {
+  color: #4f4f4f;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+#modal .produto .conteudo p {
+  color: var(--secondary-text-color);
+  font-size: 14px;
+  margin-bottom: 10%;
+  max-width: 400px;
+}
+
+#modal .produto .conteudo a {
+  text-decoration: none;
+  padding: 8px 18px;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
 }
