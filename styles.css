@@ -22,7 +22,7 @@ header {
 }
 
 h1 {
-  color: black;
+  color: var(--primary-text-color);
   cursor: pointer;
 
   display: flex;
@@ -35,7 +35,7 @@ h1 {
   width: 400px;
   border-radius: 5px;
   padding: 12px 18px;
-  color: black;
+  color: var(--secondary-text-color);
   background-color: rgba(0, 0, 0, 0.05);
   font-size: 14px;
 }
@@ -49,9 +49,18 @@ h1 {
 .icons-area a {
   margin-right: 20px;
   text-decoration: none;
-  color: black;
+  color: var(--primary-text-color);
+  font-weight: 600;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icons-area a img {
+  padding-right: 6px;
+}
+
+main {
+  padding: 30px;
 }
