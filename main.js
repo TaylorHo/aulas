@@ -98,6 +98,9 @@ function escondeModal() {
 function listaProdutos() {
   var elementoHtmlDeListaDeProdutos = document.querySelector('.lista-de-produtos');
 
+  listaDeProdutos.forEach((produto) => {
+    elementoHtmlDeListaDeProdutos.innerHTML += `<div class="produto" onclick="mostraModal(${produto.id})"><div class="imagem"><img src="${produto.imagem}" alt="${produto.titulo}"></div><div class="conteudo"><h3>${produto.titulo}<h3><h4>R\$${produto.preco}</h4><p>${produto.descricao}</p></div></div>`;
+  })
 }
 
 
