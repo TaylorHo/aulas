@@ -7,6 +7,25 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.amarelo {
+  background-color: var(--yellow);
+}
+
+
+.azul {
+  background-color: var(--blue);
+}
+
+
+.verde {
+  background-color: var(--green);
+}
+
+
+.roxo {
+  background-color: var(--purple);
+}
+
 header {
 
   height: 50px;
@@ -63,4 +82,47 @@ h1 {
 
 main {
   padding: 30px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+  padding: 16px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+.banner .item {
+  display: flex;
+  align-items: center;
+}
+
+.banner .item .bolinha {
+  margin-right: 10px;
+}
+
+.banner .item .bolinha .cor {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+
+  background-color: yellow;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner .item .textos h3 {
+  color: var(--primary-text-color);
+  font-weight: 600;
+}
+
+.banner .item .textos p {
+  color: var(--secondary-text-color);
+  font-weight: 400;
+  line-height: 25px;
 }
