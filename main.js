@@ -71,10 +71,17 @@ var listaDeProdutos = [
   }
 ]
 
+// <div class="produto" onclick="mostraModal()"><div class="imagem"><img src="./assets/images/default.jpg" alt="Produto"></div><div class="conteudo"><h3>Produto</h3><h2>Preço</h2><p>Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição</p><a href="#">Comprar Agora</a></div></div>
 
-function mostraModal() {
-
+function mostraModal(id) {
   var modal = document.querySelector("#modal");
+
+  if (id) {
+    var produto = listaDeProdutos[id - 1];
+
+    modal.innerHTML = `<div class="produto"><div class="imagem"><img src="${produto.imagem}" alt="${produto.titulo}"></div><div class="conteudo"><h3>${produto.titulo}</h3><h2>R$${produto.preco}</h2><p>${produto.descricao}</p><a href="#" onclick="adicionarAoCarrinho(${id})">Adicionar ao Carrinho</a></div></div>`;
+  }
+
   modal.classList.remove("escondido");
 
   var overlay = document.querySelector("#fundo-preto");
@@ -99,8 +106,24 @@ function listaProdutos() {
   var elementoHtmlDeListaDeProdutos = document.querySelector('.lista-de-produtos');
 
   listaDeProdutos.forEach((produto) => {
-    elementoHtmlDeListaDeProdutos.innerHTML += `<div class="produto" onclick="mostraModal(${produto.id})"><div class="imagem"><img src="${produto.imagem}" alt="${produto.titulo}"></div><div class="conteudo"><h3>${produto.titulo}<h3><h4>R\$${produto.preco}</h4><p>${produto.descricao}</p></div></div>`;
+    elementoHtmlDeListaDeProdutos.innerHTML += `<div class="produto" onclick="mostraModal(${produto.id})"><div class="imagem"><img src="${produto.imagem}" alt="${produto.titulo}"></div><div class="conteudo"><h3>${produto.titulo}<h3><h4>R\$${produto.preco}</h4><p>${produto.descricao.substring(0, 100)}...</p></div></div>`;
   })
+}
+
+
+
+
+function adicionarAoCarrinho(id) {
+
+  var carrinhoDeProdutos = [
+    {
+      id: id,
+      quantidade: 1
+    }
+  ];
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinhoDeProdutos));
+
 }
 
 
