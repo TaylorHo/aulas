@@ -71,8 +71,6 @@ var listaDeProdutos = [
   }
 ]
 
-// <div class="produto" onclick="mostraModal()"><div class="imagem"><img src="./assets/images/default.jpg" alt="Produto"></div><div class="conteudo"><h3>Produto</h3><h2>Preço</h2><p>Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição</p><a href="#">Comprar Agora</a></div></div>
-
 function mostraModal(id) {
   var modal = document.querySelector("#modal");
 
@@ -115,14 +113,54 @@ function listaProdutos() {
 
 function adicionarAoCarrinho(id) {
 
-  var carrinhoDeProdutos = [
-    {
-      id: id,
-      quantidade: 1
-    }
-  ];
+  var carrinho = localStorage.getItem('carrinho');
 
-  localStorage.setItem("carrinho", JSON.stringify(carrinhoDeProdutos));
+  if (carrinho) {
+
+    var carrinhoArray = JSON.parse(carrinho);
+
+    var novoCarrinho = [];
+    var jaAdicionadoAoCarrinho = false;
+
+    carrinhoArray.forEach(
+      function (produtoNoCarrinho) {
+
+        if (produtoNoCarrinho.id == id) {
+          jaAdicionadoAoCarrinho = true;
+          novoCarrinho.push(
+            {
+              id: produtoNoCarrinho.id,
+              quantidade: produtoNoCarrinho.quantidade + 1,
+            }
+          )
+        } else {
+          novoCarrinho.push(produtoNoCarrinho);
+        }
+
+      }
+    );
+
+    if (jaAdicionadoAoCarrinho == false) {
+      novoCarrinho.push(
+        {
+          id: id,
+          quantidade: 1,
+        }
+      )
+    }
+
+    localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
+
+  } else {
+    var carrinhoDeProdutos = [
+      {
+        id: id,
+        quantidade: 1
+      }
+    ];
+  
+    localStorage.setItem("carrinho", JSON.stringify(carrinhoDeProdutos));
+  }
 
 }
 
