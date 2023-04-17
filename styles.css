@@ -145,15 +145,53 @@ main {
   width: 30%;
 
   padding: 10px;
+  margin-bottom: 30px;
 }
 
 .lista-de-produtos .produto img {
   border-radius: 12px;
-
-
-  /*
-  object-fit: cover;
   width: 100%;
-  */
+}
 
+.lista-de-produtos .produto p {
+  font-size: 14px;
+}
+
+
+
+
+/* CONFIGURAÇÕES PARA O MODAL DO PRODUTO */
+
+.escondido {
+  display: none;
+}
+
+#fundo-preto {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#modal {
+  position: fixed;
+  top: 10%;
+  bottom: 25%;
+  left: 15%;
+  right: 15%;
+
+  background-color: white;
+  border-radius: 20px;
+}
+
+#modal .conteudo-do-modal {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  padding: 20px;
+  height: 100%;
 }
