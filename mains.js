@@ -73,17 +73,23 @@ var produtos = [
 
 function mostraModal(id) {
 
-    console.log(id);
+    produtos.forEach(
+        function (produto) {
+            if (produto.id == id) {
 
-    var elementoDoModal = document.querySelector('#modal');
-    var elementoDoFundoPreto = document.querySelector('#fundo-preto');
+                var elementoDoModal = document.querySelector('#modal');
+                var elementoDoFundoPreto = document.querySelector('#fundo-preto');
+            
+                var conteudoDoModal = `<div class="conteudo-do-modal"><img src="${produto.imagem}" alt="${produto.titulo}"><div class="informacoes-do-produto"><h4>${produto.titulo}</h4><h3>R$${produto.preco}</h3><p class="descricao">Descrição:</p><p>${produto.descricao}</p><div class="botao"><a href="#">Adicionar ao Carrinho</a></div></div></div>`;
+            
+                elementoDoModal.innerHTML = conteudoDoModal;
+            
+                elementoDoModal.classList.remove('escondido');
+                elementoDoFundoPreto.classList.remove('escondido');
 
-    var conteudoDoModal = `<div class="conteudo-do-modal"><img src="./assets/images/default.jpg" alt="Produto"><div class="informacoes-do-produto"><h4>Título</h4><h3>R$10,00</h3><p class="descricao">Descrição:</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><div class="botao"><a href="#">Adicionar ao Carrinho</a></div></div></div>`;
-
-    elementoDoModal.innerHTML = conteudoDoModal;
-
-    elementoDoModal.classList.remove('escondido');
-    elementoDoFundoPreto.classList.remove('escondido');
+            }
+        }
+    );
 }
 
 function escondeModal() {
@@ -93,3 +99,18 @@ function escondeModal() {
     elementoDoModal.classList.add('escondido');
     elementoDoFundoPreto.classList.add('escondido');
 }
+
+
+function listaProdutos() {
+    var elementoHtmlDaListaDeProdutos = document.querySelector('.lista-de-produtos');
+    produtos.forEach(
+        function (produto) {
+
+            var conteudoDoProduto = `<div class="produto" onclick="mostraModal(${produto.id})"><img src="${produto.imagem}" alt="${produto.titulo}"><h4>${produto.titulo}</h4><h3>R$${produto.preco}</h3><p>${produto.descricao.substring(0, 90)}...</p></div>`;
+
+            elementoHtmlDaListaDeProdutos.innerHTML += conteudoDoProduto;
+
+        }
+    );
+}
+listaProdutos();
