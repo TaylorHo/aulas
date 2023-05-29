@@ -146,6 +146,7 @@ main {
 
   padding: 10px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .lista-de-produtos .produto img {
