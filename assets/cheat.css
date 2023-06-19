@@ -1,0 +1,18 @@
+
+main .play {
+    position: relative;
+    left: -240px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+}
+
+main .play:hover {
+    position: relative;
+    left: -240px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+    transform: scale(1.1);
+}
+
+main .normal {
+    position: relative;
+    right: -100px;
+}
